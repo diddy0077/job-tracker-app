@@ -15,7 +15,7 @@ const filters = ['All', 'Applied', 'Interviewing', 'Offer', 'Rejected']
     const getApplications = async () => {
       setLoading(true)
       try {
-        const res = await fetch('http://localhost:5000/applications')
+        const res = await fetch('https://job-tracker-app-jppo.onrender.com/applications')
         if (!res.ok) {
           throw {
             message: 'Error fetching Applications',

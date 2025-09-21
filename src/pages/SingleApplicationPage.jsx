@@ -66,7 +66,7 @@ const SingleApplication = () => {
       activityLog: [...application.activityLog, logObject],
     };
     try {
-      const res = await fetch(`http://localhost:5000/applications/${id}`, {
+      const res = await fetch(`https://job-tracker-app-jppo.onrender.com/applications/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -97,7 +97,7 @@ const SingleApplication = () => {
 
   const deleteApplication = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/applications/${id}`, {
+      const res = await fetch(`https://job-tracker-app-jppo.onrender.com/applications/${id}`, {
         method: "DELETE",
       });
 
@@ -182,7 +182,7 @@ const SingleApplication = () => {
     };
 
     try {
-      const res = await fetch(`http://localhost:5000/applications/${id}`, {
+      const res = await fetch(`https://job-tracker-app-jppo.onrender.com/applications/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

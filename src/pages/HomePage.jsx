@@ -26,7 +26,7 @@ import {
 } from "react-icons/fa";
 
 export async function HomeLoader() {
-  const res = await fetch("http://localhost:5000/applications");
+  const res = await fetch("https://job-tracker-app-jppo.onrender.com/applications");
   if (!res.ok) {
     throw {
       message: "Failed to fetch vans",
@@ -182,7 +182,7 @@ const HomePage = ({ setApplications }) => {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/applications/", {
+      const res = await fetch("https://job-tracker-app-jppo.onrender.com/applications/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
