@@ -46,7 +46,7 @@ const AddApplicationForm = ({
     >
       <motion.form
         onSubmit={handleSubmit}
-        className="bg-slate-800 rounded-2xl shadow-xl p-6 min-w-xs border border-slate-700"
+        className="bg-slate-800 max-h-[600px] no-scrollbar overflow-y-scroll rounded-2xl shadow-xl p-6 min-w-xs border border-slate-700"
         variants={formVariants}
         onClick={(e) => e.stopPropagation()}
       >

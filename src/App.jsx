@@ -6,6 +6,7 @@ import Applications from './pages/Applications'
 import SingleApplicationPage from './pages/SingleApplicationPage'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import ScrollToTop from './components/ScrollToTop'
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
    ))
 
   return (
-    <div className='bg-gradient-to-br from-gray-950 via-slate-900 to-zinc-950'>
+    <div className='bg-gradient-to-br from-gray-950 via-slate-900 to-zinc-950 no-scrollbar'>
       <RouterProvider router={router} />
        <ToastContainer 
         position="top-right"
@@ -33,6 +34,7 @@ const App = () => {
         pauseOnHover
         theme="light" // or "light", "dark"
       />
+      <ScrollToTop/>
     </div>
   )     
 }
