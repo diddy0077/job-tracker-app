@@ -4,7 +4,6 @@ import Layout from './components/Layout'
 import HomePage,{HomeLoader} from './pages/HomePage'
 import Applications from './pages/Applications'
 import SingleApplicationPage from './pages/SingleApplicationPage'
-import Stats from './pages/Stats'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
