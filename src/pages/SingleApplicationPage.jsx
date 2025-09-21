@@ -221,7 +221,7 @@ const SingleApplication = () => {
     >
       <div className="mt-6 ml-5 mb-8 md:mb-5">
         <button
-  onClick={() => navigate(-1)}
+  onClick={() => navigate('/applications')}
   className="flex items-center gap-2 bg-slate-700 text-slate-300 font-medium px-6 py-3 rounded-xl hover:bg-slate-600 transition transform hover:-translate-y-0.5 cursor-pointer"
 >
   <FaArrowLeft />
