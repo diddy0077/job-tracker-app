@@ -28,7 +28,7 @@ const SingleApplication = () => {
     const fetchApplication = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/applications/${id}`);
+        const res = await fetch(`https://job-tracker-app-jppo.onrender.com/applications/${id}`);
         if (!res.ok) throw new Error("Application not found");
         const data = await res.json();
         setTimeout(() => {
