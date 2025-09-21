@@ -20,6 +20,7 @@ const AddApplicationForm = ({
   setLink,
   formNotes,
   setFormNotes,
+  isHome
 }) => {
 
   const formVariants = {
@@ -50,7 +51,7 @@ const AddApplicationForm = ({
         onClick={(e) => e.stopPropagation()}
       >
         <h1 className="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-3">
-          Edit Application
+          {isHome ? 'Add New Application' : 'Edit Application'}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1">

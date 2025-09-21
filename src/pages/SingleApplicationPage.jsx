@@ -3,14 +3,9 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { FaExclamationTriangle,FaArrowLeft} from "react-icons/fa";
 import LogEntry from "../components/LogEntry";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "react-toastify";
+import AddApplicationForm from "../components/AddApplicationForm";
 
-function determineClassName(status) {
-  if (status === "Interviewing") return "text-indigo-600 bg-indigo-100";
-  if (status === "Offer") return "text-green-600 bg-green-100";
-  if (status === "Rejected") return "text-red-600 bg-red-100";
-  if (status === "Applied") return "text-blue-600 bg-blue-100";
-  return "text-slate-500 bg-slate-200";
-}
 
 const SingleApplication = () => {
   const { id } = useParams();
@@ -92,6 +87,14 @@ const SingleApplication = () => {
     }
   };
 
+  function determineClassName(status) {
+  if (status === "Interviewing") return "text-indigo-600 bg-indigo-100";
+  if (status === "Offer") return "text-green-600 bg-green-100";
+  if (status === "Rejected") return "text-red-600 bg-red-100";
+  if (status === "Applied") return "text-blue-600 bg-blue-100";
+  return "text-slate-500 bg-slate-200";
+}
+
   const deleteApplication = async () => {
     try {
       const res = await fetch(`http://localhost:5000/applications/${id}`, {
@@ -108,9 +111,9 @@ const SingleApplication = () => {
       } catch {
         data = null;
       }
+      toast.success('Application Successfully Deleted!')
       navigate("/applications");
       console.log("Deleted:", data);
-      // Here you could also remove it from state or redirect
     } catch (error) {
       console.log("Failed to delete application:", error);
     }
@@ -195,6 +198,7 @@ const SingleApplication = () => {
       console.log("Updated:", data);
       setApplication(data);
       setOpenForm(false);
+      toast.success('Application Updated Successfully!')
     } catch (error) {
       console.log("Error Updating Application", error);
     }
@@ -477,163 +481,26 @@ const SingleApplication = () => {
         </AnimatePresence>
 
         {/* Edit Form Modal */}
-        <AnimatePresence>
-          {openForm && (
-            <motion.section
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setOpenForm(false)}
-            >
-              <motion.form
-                onSubmit={handleSubmit}
-                className="bg-slate-800 rounded-2xl shadow-xl p-6 min-w-xs transform border border-slate-700"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <h1 className="text-xl font-bold text-white mb-4 border-b border-slate-700 pb-3">
-                  Edit Application
-                </h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="company-name"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Company Name:
-                    </label>
-                    <input
-                      onChange={(e) => setCompanyName(e.target.value)}
-                      value={companyName}
-                      type="text"
-                      name="company-name"
-                      id="company-name"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="role"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Role / Position:
-                    </label>
-                    <input
-                      onChange={(e) => setRole(e.target.value)}
-                      value={role}
-                      type="text"
-                      name="role"
-                      id="role"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="status"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Status:
-                    </label>
-                    <select
-                      onChange={(e) => setStatus(e.target.value)}
-                      value={status}
-                      name="status"
-                      id="status"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    >
-                      <option value="Applied">Applied</option>
-                      <option value="Interviewing">Interviewing</option>
-                      <option value="Offer">Offer</option>
-                      <option value="Rejected">Rejected</option>
-                    </select>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="date-applied"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Date Applied:
-                    </label>
-                    <input
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      type="date"
-                      name="date-applied"
-                      id="date-applied"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="source"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Source (e.g., LinkedIn, Indeed):
-                    </label>
-                    <input
-                      onChange={(e) => setSource(e.target.value)}
-                      value={source}
-                      type="text"
-                      name="source"
-                      id="source"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label
-                      htmlFor="application-link"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Application Link:
-                    </label>
-                    <input
-                      onChange={(e) => setLink(e.target.value)}
-                      value={link}
-                      type="url"
-                      name="application-link"
-                      id="application-link"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1 col-span-1 md:col-span-2">
-                    <label
-                      htmlFor="Notes"
-                      className="text-sm text-slate-400 font-medium"
-                    >
-                      Notes:
-                    </label>
-                    <textarea
-                      onChange={(e) => setFormNotes(e.target.value)}
-                      value={formNotes}
-                      rows="5"
-                      name="Notes"
-                      id="Notes"
-                      className="rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 border border-slate-700 p-3 text-sm bg-slate-900 text-white"
-                    ></textarea>
-                  </div>
-                  <div className="flex gap-4 col-span-1 md:col-span-2 justify-end">
-                    <button
-                      type="button"
-                      onClick={() => setOpenForm(false)}
-                      className="bg-slate-700 text-slate-300 font-medium px-6 py-3 rounded-xl hover:bg-slate-600 transition transform hover:-translate-y-0.5 cursor-pointer"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      className="bg-indigo-600 text-white font-medium px-6 py-3 rounded-xl shadow-lg hover:bg-indigo-700 transition transform hover:-translate-y-0.5"
-                    >
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </motion.form>
-            </motion.section>
-          )}
-        </AnimatePresence>
+        <AddApplicationForm
+               isHome={false}
+                openForm={openForm}
+                setOpenForm={setOpenForm}
+                role={role}
+                setRole={setRole}
+                companyName={companyName}
+                setCompanyName={setCompanyName}
+                link={link}
+                setLink={setLink}
+                status={status}
+                source={source}
+                date={date}
+                setSource={setSource}
+                setDate={setDate}
+                setStatus={setStatus}
+                formNotes={formNotes}
+                setFormNotes={setFormNotes}
+                handleSubmit={handleSubmit}
+              />
       </div>
     </motion.div>
   );

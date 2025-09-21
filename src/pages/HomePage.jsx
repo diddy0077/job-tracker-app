@@ -195,10 +195,8 @@ const HomePage = ({ setApplications }) => {
 
       // ✅ Append instead of overwrite
       setApplications((prev) => [...prev, data]);
-      toast.success("Application Added Successfully!");
-      setTimeout(() => {
-        setOpenForm(false);
-      }, 2000);
+      toast.success("Application Added Successfully!");    
+        setOpenForm(false); 
     } catch (error) {
       console.log("Error Adding Application", error);
       toast.error("Something went wrong. Try again.");
@@ -374,6 +372,7 @@ const HomePage = ({ setApplications }) => {
         </div>
       </motion.section>
       <AddApplicationForm
+        isHome={true}
         openForm={openForm}
         setOpenForm={setOpenForm}
         role={role}

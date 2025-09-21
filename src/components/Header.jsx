@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 
 // Mocked for a self-contained environment
 
@@ -24,7 +24,20 @@ const Header = ({ setOpenForm }) => {
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
-    };
+  };
+  
+  const location = useLocation()
+  const nav = useNavigate()
+  function navigate() {
+    if (location.pathname === '/') {
+      setOpenForm(true)
+    } else {
+      nav('/')
+      setTimeout(() => {
+        setOpenForm(true)
+      },2000)
+    }
+  }
 
     return (
         <motion.header
@@ -48,17 +61,17 @@ const Header = ({ setOpenForm }) => {
                         Dashboard
                     </Link>
                 </motion.div>
-                <Link whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300 }}>
+                <div whileHover={{ y: -3 }} transition={{ type: "spring", stiffness: 300 }}>
                     <Link to='/applications' className='text-slate-300 text-md font-semibold hover:text-indigo-400 transition-colors duration-200'>
                         Applications
                     </Link>
-                </Link>
+                </div>
             </nav>
 
             {/* Desktop Add Application Button */}
             <div className='hidden md:block'>
                 <motion.button
-                    onClick={() => setOpenForm(true)}
+                    onClick={navigate}
                     className='cursor-pointer rounded-full bg-indigo-600 text-white px-4 py-2 font-semibold text-sm hover:bg-indigo-700 transition-colors duration-200 shadow-md'
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

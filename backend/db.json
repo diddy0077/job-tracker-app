@@ -8,7 +8,7 @@
       "dateApplied": "2025-09-10",
       "notes": "Feedback: First interview went well. Second round next week.",
       "source": "LinkedIn",
-      "link": "#",
+      "link": "https://www.facebok.com/",
       "activityLog": [
         {
           "message": "Notes changed from Feedback: First interview went well. Second round next week. to hello",
@@ -25,6 +25,14 @@
         {
           "message": "Notes changed from \"hello\" to \"Feedback: First interview went well. Second round next week.\"",
           "timeStamp": "2025-09-20T01:13:38.372Z"
+        },
+        {
+          "message": "Link changed from \"#\" to \"https://www.facebook.com/\"",
+          "timeStamp": "2025-09-21T15:26:46.646Z"
+        },
+        {
+          "message": "Link changed from \"https://www.facebook.com/\" to \"https://www.facebok.com/\"",
+          "timeStamp": "2025-09-21T15:29:15.991Z"
         }
       ]
     },
@@ -159,22 +167,6 @@
       "source": "Company Website",
       "link": "#",
       "activityLog": []
-    },
-    {
-      "id": "7e37",
-      "role": "Frontend Developer",
-      "status": "Interviewing",
-      "company": "Innovate Inc.",
-      "link": "https://reactjob-listing.netlify.app/",
-      "notes": "Test",
-      "dateApplied": "2025-09-18",
-      "source": "Company Website",
-      "activityLog": [
-        {
-          "message": "Application Created",
-          "timeStamp": "2025-09-20T22:15:25.422Z"
-        }
-      ]
     }
   ]
 }
