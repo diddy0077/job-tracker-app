@@ -83,7 +83,7 @@ npm run dev
 ```
 
 ## 📸 Screenshots
-Home | Posts Page
+Dashboard | Single Application Page
 :-------------------------:|:-------------------------:
 ![Dashboard](./public/screenshots/dashboard.png) | ![Single Application Page](./public/screenshots/application.png)
 
