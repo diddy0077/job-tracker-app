@@ -19,8 +19,6 @@ const ScrollToTop = () => {
   };
   }, []);
   
-  console.log("Button visible?", visible);
-
 
   return (
     <>
