@@ -7,13 +7,14 @@ import SingleApplicationPage from './pages/SingleApplicationPage'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ScrollToTop from './components/ScrollToTop'
+import Error from './components/Error'
 
 
 const App = () => {
   const [applications, setApplications] = useState([])
   const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={<Layout/>}>
-      <Route index loader={HomeLoader} element={<HomePage setApplications={setApplications} />} />
+      <Route index loader={HomeLoader} errorElement={<Error/>} element={<HomePage setApplications={setApplications} />} />
       <Route path='applications' element={<Applications applications={applications} setApplications={setApplications} />} />
       <Route path='applications/:id'  element={<SingleApplicationPage setApplications={setApplications}/>}/>
         </Route>
