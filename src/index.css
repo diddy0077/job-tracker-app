@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+}
+
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.open .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal.closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal.closing .modal-content {
+  transform: scale(0.95);
+  opacity: 0;
+}

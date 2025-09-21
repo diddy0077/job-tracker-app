@@ -1,0 +1,180 @@
+{
+  "applications": [
+    {
+      "id": "1",
+      "company": "Innovate Inc.",
+      "role": "Frontend Developer",
+      "status": "Interviewing",
+      "dateApplied": "2025-09-10",
+      "notes": "Feedback: First interview went well. Second round next week.",
+      "source": "LinkedIn",
+      "link": "#",
+      "activityLog": [
+        {
+          "message": "Notes changed from Feedback: First interview went well. Second round next week. to hello",
+          "timeStamp": "2025-09-20T01:09:03.894Z"
+        },
+        {
+          "message": "Notes changed from hello to Feedback: First interview went well. Second round next week.",
+          "timeStamp": "2025-09-20T01:10:04.711Z"
+        },
+        {
+          "message": "Notes changed from \"Feedback: First interview went well. Second round next week.\" to \"hello\"",
+          "timeStamp": "2025-09-20T01:13:32.301Z"
+        },
+        {
+          "message": "Notes changed from \"hello\" to \"Feedback: First interview went well. Second round next week.\"",
+          "timeStamp": "2025-09-20T01:13:38.372Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "company": "Creative Solutions",
+      "role": "UX/UI Designer",
+      "status": "Interviewing",
+      "dateApplied": "2025-09-15",
+      "notes": "Feedback: Applied but still waiting to get a response\n\n",
+      "source": "Company Website",
+      "link": "https://reactjob-listing.netlify.app/",
+      "activityLog": [
+        {
+          "message": "Notes updated from Yes to No",
+          "timeStamp": "2025-09-19T22:32:46.886Z"
+        },
+        {
+          "message": "Notes updated from No to Hello",
+          "timeStamp": "2025-09-19T22:35:05.272Z"
+        },
+        {
+          "message": "Notes updated from Hello to Feedback: Applied but still waiting to get a response",
+          "timeStamp": "2025-09-19T22:36:16.914Z"
+        },
+        {
+          "message": "Notes updated from Feedback: Applied but still waiting to get a response to Feedback: Applied but still waiting to get a response\n\n",
+          "timeStamp": "2025-09-20T20:22:04.173Z"
+        },
+        {
+          "message": "Status changed from \"Applied\" to \"Interviewing\"",
+          "timeStamp": "2025-09-20T21:57:31.947Z"
+        },
+        {
+          "message": "Link changed from \"#\" to \"https://reactjob-listing.netlify.app/\"",
+          "timeStamp": "2025-09-20T21:57:31.947Z"
+        },
+        {
+          "message": "Status changed from \"Interviewing\" to \"Applied\"",
+          "timeStamp": "2025-09-20T22:35:21.117Z"
+        },
+        {
+          "message": "Status changed from \"Applied\" to \"Interviewing\"",
+          "timeStamp": "2025-09-21T00:06:49.288Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "company": "Tech Giants LLC",
+      "role": "Full-Stack Engineer",
+      "status": "Offer",
+      "dateApplied": "2025-08-20",
+      "notes": "Feedback: Received offer, need to decide by Friday.",
+      "source": "Referral",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "4",
+      "company": "Data Driven Co.",
+      "role": "Data Analyst",
+      "status": "Rejected",
+      "dateApplied": "2025-09-01",
+      "notes": "Feedback: Did not pass the technical assessment.",
+      "source": "Indeed",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "5",
+      "company": "Bright Future Tech",
+      "role": "Backend Developer",
+      "status": "Applied",
+      "dateApplied": "2025-09-12",
+      "notes": "Feedback: Waiting to hear back.",
+      "source": "LinkedIn",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "6",
+      "company": "NextGen Systems",
+      "role": "DevOps Engineer",
+      "status": "Interviewing",
+      "dateApplied": "2025-09-05",
+      "notes": "Feedback: Completed first screening, technical scheduled.",
+      "source": "Company Website",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "7",
+      "company": "Green Energy Corp.",
+      "role": "Frontend Developer",
+      "status": "Offer",
+      "dateApplied": "2025-08-28",
+      "notes": "Feedback: Offer received. Negotiating salary.",
+      "source": "Referral",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "8",
+      "company": "FinTech World",
+      "role": "Product Manager",
+      "status": "Applied",
+      "dateApplied": "2025-09-14",
+      "notes": "Nil",
+      "source": "Indeed",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "9",
+      "company": "Cloud Nine Solutions",
+      "role": "Cloud Architect",
+      "status": "Interviewing",
+      "dateApplied": "2025-09-07",
+      "notes": "Feedback: Technical interview scheduled for tomorrow.",
+      "source": "LinkedIn",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "10",
+      "company": "SecureTech Ltd.",
+      "role": "Cybersecurity Analyst",
+      "status": "Rejected",
+      "dateApplied": "2025-09-03",
+      "notes": "Feedback: skills not aligned with role.",
+      "source": "Company Website",
+      "link": "#",
+      "activityLog": []
+    },
+    {
+      "id": "7e37",
+      "role": "Frontend Developer",
+      "status": "Interviewing",
+      "company": "Innovate Inc.",
+      "link": "https://reactjob-listing.netlify.app/",
+      "notes": "Test",
+      "dateApplied": "2025-09-18",
+      "source": "Company Website",
+      "activityLog": [
+        {
+          "message": "Application Created",
+          "timeStamp": "2025-09-20T22:15:25.422Z"
+        }
+      ]
+    }
+  ]
+}
