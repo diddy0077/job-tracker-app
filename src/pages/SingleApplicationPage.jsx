@@ -245,7 +245,7 @@ const SingleApplication = () => {
             </p>
           </div>
           <span
-            className={`px-4 py-1.5 rounded-full text-sm font-semibold border ${determineClassName(
+            className={`px-4 py-1.5 self-start rounded-full text-sm font-semibold border ${determineClassName(
               application.status
             )}`}
           >
