@@ -13,7 +13,6 @@ const App = () => {
   const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={<Layout/>}>
       <Route index loader={HomeLoader} element={<HomePage setApplications={setApplications} />} />
-      <Route path='stats'  element={<Stats applications={applications}/>} />
       <Route path='applications' element={<Applications applications={applications} setApplications={setApplications} />} />
       <Route path='applications/:id'  element={<SingleApplicationPage setApplications={setApplications}/>}/>
         </Route>
