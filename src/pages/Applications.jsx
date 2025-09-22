@@ -1,15 +1,17 @@
-import React,{useEffect, useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Card from '../components/Card'
 import { motion } from 'framer-motion';
+import { ApplicationContext } from '../components/Context';
 
-const Applications = ({applications, setApplications}) => {
+const Applications = () => {
 const filters = ['All', 'Applied', 'Interviewing', 'Offer', 'Rejected']
   const [searchParams, setSearchParams] = useSearchParams()
   const isActive = searchParams.get('status')
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-   const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
+  const {applications, setApplications} = useContext(ApplicationContext)
 
   useEffect(() => {
     const getApplications = async () => {

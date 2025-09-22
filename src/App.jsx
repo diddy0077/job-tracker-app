@@ -8,19 +8,19 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ScrollToTop from './components/ScrollToTop'
 import Error from './components/Error'
-
+import { ApplicationProvider } from './components/Context'
 
 const App = () => {
-  const [applications, setApplications] = useState([])
   const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={<Layout/>}>
-      <Route index loader={HomeLoader} errorElement={<Error/>} element={<HomePage setApplications={setApplications} />} />
-      <Route path='applications' element={<Applications applications={applications} setApplications={setApplications} />} />
-      <Route path='applications/:id'  element={<SingleApplicationPage setApplications={setApplications}/>}/>
+      <Route index loader={HomeLoader} errorElement={<Error/>} element={<HomePage />} />
+      <Route path='applications' element={<Applications  />} />
+      <Route path='applications/:id'  element={<SingleApplicationPage />}/>
         </Route>
    ))
 
   return (
+    <ApplicationProvider>
     <div className='bg-gradient-to-br from-gray-950 via-slate-900 to-zinc-950 no-scrollbar'>
       <RouterProvider router={router} />
        <ToastContainer 
@@ -36,7 +36,8 @@ const App = () => {
         theme="light" // or "light", "dark"
       />
       <ScrollToTop/>
-    </div>
+      </div>
+     </ApplicationProvider> 
   )     
 }
 

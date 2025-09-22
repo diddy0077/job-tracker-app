@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import {
   NavLink,
   useSearchParams,
@@ -24,7 +24,7 @@ import {
   FaHandshake,
   FaTimesCircle,
 } from "react-icons/fa";
-
+import { ApplicationContext } from "../components/Context";
 export async function HomeLoader() {
   const res = await fetch("https://job-tracker-app-jppo.onrender.com/applications");
   if (!res.ok) {
@@ -37,7 +37,8 @@ export async function HomeLoader() {
   return res.json();
 }
 
-const HomePage = ({ setApplications }) => {
+
+const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const statusFilter = searchParams.get("status");
   const data = useLoaderData();
@@ -53,6 +54,7 @@ const HomePage = ({ setApplications }) => {
   const { openForm, setOpenForm } = useOutletContext();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const {setApplications} = useContext(ApplicationContext)
 
   const filteredApplications = recentApplications.filter((item) => {
     return statusFilter
